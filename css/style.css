@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+nav {
+  height: 80px;
+  background-color: #023047;
+  color: #ffb703;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  -ms-grid-columns: 1fr 5fr;
+      grid-template-columns: 1fr 5fr;
+      grid-template-areas: "logo menu";
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20px;
+}
+
+nav h1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+}
+
+nav ul {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: menu;
+  list-style: none;
+  justify-self: flex-end;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #ffb703;
+  text-decoration: none;
+}
+
+nav label, nav input {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 80px 1fr;
+        grid-template-rows: 80px 1fr;
+        grid-template-areas: "logo hamburger" "menu menu";
+    height: auto;
+  }
+  nav label {
+    display: block;
+    font-size: 30px;
+    -ms-grid-column-align: end;
+        justify-self: end;
+  }
+  nav ul {
+    display: none;
+  }
+  nav #open-menu:checked + ul {
+    width: 100%;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: menu;
+    height: calc(100vh - 80px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  nav #open-menu:checked + ul li {
+    display: block;
+    font-size: 30px;
+    margin: 10px 0px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
